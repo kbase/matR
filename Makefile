@@ -1,6 +1,5 @@
 TARGET ?= /kb/deployment
 DEPLOY_RUNTIME ?= /kb/runtime
-TOP_DIR = ../..
 SERVICE = matR
 SERVICE_DIR = $(TARGET)/services/$(SERVICE)
 DOC_DIR = $(SERVICE_DIR)/webroot
@@ -8,10 +7,6 @@ DOC_DIR = $(SERVICE_DIR)/webroot
 default: build-libs
 
 build-libs:
-	git submodule init
-	git submodule update
-	cd matR
-	git pull
 	R CMD BATCH install-matr.R
 
 deploy: deploy-client deploy-scripts deploy-server deploy-docs
