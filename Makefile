@@ -31,7 +31,7 @@ deploy-docs:
 test: test-server test-scripts test-client
 
 test-client:
-	echo "No automatic client tests yet, manually run 'demo'. See readme.txt"
+	echo "No automatic client tests yet, manually run 'demo'. See readme.txt."
 
 test-scripts:
 	echo "No scripts to test"
