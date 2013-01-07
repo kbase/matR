@@ -4,18 +4,19 @@ SERVICE = matR
 SERVICE_DIR = $(TARGET)/services/$(SERVICE)
 DOC_DIR = $(SERVICE_DIR)/webroot
 
-default: build-libs
+default:
+	echo "everything look good?"
 
 build-libs:
 	R CMD BATCH install-matr.R
 
-deploy: deploy-client deploy-scripts deploy-server deploy-docs
+deploy: deploy-client deploy-server
 
 deploy-libs: build-libs
 
-deploy-client: deploy-libs
+deploy-client: deploy-libs deploy-scripts deploy-docs
 	cp matR/README readme.txt
-	mkdir $(SERVICE_DIR)
+	-mkdir $(SERVICE_DIR)
 
 deploy-scripts:
 	echo "No scripts to install"
@@ -24,7 +25,9 @@ deploy-server:
 	echo "No server to install"
 
 deploy-docs:
-	mkdir $(DOC_DIR)
+	-rm $(DOC_DIR)/README.md
+	-rm $(DOC_DIR)/DESCRIPTION.md
+	-mkdir $(DOC_DIR)
 	cp matR/README $(DOC_DIR)/README.md
 	cp matR/DESCRIPTION $(DOC_DIR)/DESCRIPTION.md
 
