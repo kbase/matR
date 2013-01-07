@@ -16,7 +16,6 @@ deploy-libs: build-libs
 
 deploy-client: deploy-libs deploy-scripts deploy-docs
 	cp matR/README readme.txt
-	-mkdir $(SERVICE_DIR)
 
 deploy-scripts:
 	echo "No scripts to install"
@@ -25,6 +24,7 @@ deploy-server:
 	echo "No server to install"
 
 deploy-docs:
+	-mkdir $(SERVICE_DIR)
 	-rm $(DOC_DIR)/README.md
 	-rm $(DOC_DIR)/DESCRIPTION.md
 	-mkdir $(DOC_DIR)
