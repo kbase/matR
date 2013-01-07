@@ -18,10 +18,10 @@ deploy-client: deploy-libs
 	mkdir $(SERVICE_DIR)
 
 deploy-scripts:
-	"No scripts to install"
+	echo "No scripts to install"
 
 deploy-server:
-	"No server to install"
+	echo "No server to install"
 
 deploy-docs:
 	mkdir $(DOC_DIR)
