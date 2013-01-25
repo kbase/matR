@@ -8,6 +8,8 @@ default:
 	echo "everything look good?"
 
 build-libs:
+	git submodule init
+	git submodule update
 	R CMD BATCH install-matr.R
 
 deploy: deploy-client deploy-server
