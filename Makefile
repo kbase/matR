@@ -10,6 +10,7 @@ default:
 build-libs:
 	git submodule init
 	git submodule update
+	apt-get -y install libcurl4-openssl-dev
 	R CMD BATCH install-matr.R
 
 deploy: deploy-client deploy-server
