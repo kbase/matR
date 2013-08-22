@@ -10,6 +10,7 @@ default:
 build-libs:
 	git submodule init
 	git submodule update
+	cd matR; git checkout -B maint
 	R CMD BATCH install-matr.R
 
 deploy: deploy-client deploy-server
