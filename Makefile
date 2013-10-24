@@ -3,6 +3,8 @@ DEPLOY_RUNTIME ?= /kb/runtime
 SERVICE = matR
 SERVICE_DIR = $(TARGET)/services/$(SERVICE)
 DOC_DIR = $(SERVICE_DIR)/webroot
+R_LIB = $(DEPLOY_RUNTIME)/lib/R/library
+TPAGE := $(shell which tpage)
 
 default:
 	echo "everything look good?"
@@ -11,6 +13,7 @@ build-libs:
 	git submodule init
 	git submodule update
 	cd matR; git checkout -B maint
+	$(TPAGE) --define rlib=$(R_LIB) install-matr.R.tt > install-matr.R
 	R CMD BATCH install-matr.R
 
 deploy: deploy-client deploy-server
