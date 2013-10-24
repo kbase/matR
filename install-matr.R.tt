@@ -1,4 +1,5 @@
-install.packages ("matR", type = "source", repos = NULL, lib = "[% rlib %]")
+install.packages ("gplots", repos = "http://cran.wustl.edu", lib = "[% rlib %]")
 install.packages ("RCurl", repos = "http://cran.wustl.edu", lib = "[% rlib %]")
+install.packages ("matR", type = "source", repos = NULL, lib = "[% rlib %]")
 library (matR)
 dependencies ()
