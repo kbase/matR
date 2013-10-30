@@ -1,3 +1,1 @@
 install.packages ("matR", type = "source", repos = NULL, lib = "[% rlib %]")
-library (matR)
-dependencies ()
