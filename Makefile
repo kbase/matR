@@ -3,7 +3,7 @@ DEPLOY_RUNTIME ?= /kb/runtime
 SERVICE = matR
 SERVICE_DIR = $(TARGET)/services/$(SERVICE)
 DOC_DIR = $(SERVICE_DIR)/webroot
-R_LIB = $(DEPLOY_RUNTIME)/lib/R/library
+R_LIB = $(TARGET)/lib/
 TPAGE := $(shell which tpage)
 
 default:
